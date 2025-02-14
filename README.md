@@ -37,6 +37,13 @@ Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto,
 - Um **médico** só pode ter **uma consulta ativa por horário**.  
 - Uma **consulta finalizada** não pode ser alterada.  
 
+📌 **Exemplo de Agregado para o Contexto de Exames:**  
+- **Pedido de Exames** (Aggregate Root)  
+  - Médico (Entidade)  
+  - Paciente (Entidade)  
+  - Data do Pedido (Value Object)
+  - Lista de Exames (Entidade)
+
 ---
 
 ### **🗃️ Repositórios**
@@ -78,6 +85,7 @@ Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto.
 | Médico                 | Entidade        | Tem uma identidade única e pode alterar seus horários. |
 | CPF                    | Value Object    | Não muda e sempre pertence a um único paciente. |
 | Endereço               | Value Object    | Se o paciente mudar de endereço, um novo objeto será criado. |
+| PedidoDeExames (Agregado)    | Aggregate Root  | Controla a relação entre Paciente, Médico e lista de Exames. |
 | Consulta (Agregado)    | Aggregate Root  | Controla a relação entre Paciente, Médico e Data da Consulta. |
 
 
